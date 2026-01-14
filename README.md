@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)](https://reactjs.org/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-2.0.1-764ABC?logo=redux)](https://redux-toolkit.js.org/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.2-7952B3?logo=bootstrap)](https://getbootstrap.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La plateforme de référence pour trouver votre stage idéal. Connectez-vous avec les meilleures entreprises et lancez votre carrière !
 
-## Available Scripts
+## ✨ Fonctionnalités
 
-In the project directory, you can run:
+- 🔐 **Authentification complète** - Inscription, connexion, gestion de profil
+- 🔍 **Recherche avancée** - Filtres multiples pour trouver le stage parfait
+- 💼 **Gestion de candidatures** - Postulez et suivez vos candidatures
+- ❤️ **Favoris** - Sauvegardez vos offres préférées
+- 🎨 **Interface moderne** - Design responsive avec Bootstrap personnalisé
+- ⚡ **Performance optimale** - Architecture Redux pour une gestion d'état efficace
 
-### `npm start`
+## 🚀 Démarrage rapide
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prérequis
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (v16+)
+- npm (v7+)
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Cloner le projet
+git clone https://github.com/votre-username/stage-finder.git
+cd stage-finder
 
-### `npm run build`
+# Installer les dépendances
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Démarrer en mode développement
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+L'application sera accessible sur `http://localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📦 Scripts disponibles
 
-### `npm run eject`
+```bash
+npm start          # Démarre le serveur de développement
+npm run build      # Build pour la production
+npm test           # Lance les tests
+npm run eject      # Ejecte la configuration (irréversible)
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠️ Technologies utilisées
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Frontend**: React 18, React Router 6
+- **State Management**: Redux Toolkit
+- **UI Framework**: Bootstrap 5, React Bootstrap
+- **Icons**: React Icons
+- **HTTP Client**: Axios
+- **Styling**: CSS Modules
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Structure du projet
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+stage-finder/
+├── public/              # Fichiers statiques
+├── src/
+│   ├── components/      # Composants réutilisables
+│   ├── pages/          # Pages de l'application
+│   ├── store/          # Configuration Redux
+│   ├── services/       # Services API
+│   ├── utils/          # Utilitaires
+│   ├── styles/         # Styles globaux
+│   └── data/           # Données mock
+└── package.json
+```
 
-## Learn More
+## 🎨 Personnalisation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Les couleurs principales sont définies dans `src/styles/custom-bootstrap.css`:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```css
+:root {
+  --primary-blue: #0066CC;
+  --secondary-green: #00C853;
+}
+```
 
-### Code Splitting
+## 🔌 Configuration de l'API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Créez un fichier `.env` à la racine :
 
-### Analyzing the Bundle Size
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_NAME=Stage Finder
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 👥 Contribuer
 
-### Making a Progressive Web App
+Les contributions sont les bienvenues ! N'hésitez pas à :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Fork le projet
+2. Créer une branche (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
 
-### Advanced Configuration
+## 📝 Licence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
-### Deployment
+## 📧 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Email: contact@stagefinder.com
+Site web: https://stagefinder.com
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Fait avec ❤️ par l'équipe Stage Finder
+*/
+
