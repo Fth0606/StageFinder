@@ -29,25 +29,15 @@ export const updateUserProfile = createAsyncThunk(
   'user/updateProfile',
   async (profileData, { rejectWithValue, dispatch, getState }) => {
     try {
-      await simulateDelay();
-      
-      // Récupérer l'utilisateur actuel depuis le state
       const currentUser = getState().auth.user;
       
-      // Simule la mise à jour en gardant TOUTES les propriétés existantes
       const updatedProfile = { 
-        ...currentUser,  // Garde toutes les propriétés (y compris role, id, etc.)
-        ...profileData   // Écrase seulement ce qui est fourni
+        ...currentUser,
+        ...profileData  // Inclut tous les nouveaux champs
       };
       
-      // Met à jour aussi dans authSlice pour garder la cohérence
-      // IMPORTANT: On garde le role et autres propriétés critiques
       dispatch(setUser(updatedProfile));
-      
-      // Sauvegarde dans localStorage en gardant TOUTES les propriétés
       localStorage.setItem('user', JSON.stringify(updatedProfile));
-      
-      console.log('✅ Profil mis à jour:', updatedProfile);
       
       return updatedProfile;
     } catch (error) {
@@ -67,6 +57,8 @@ export const fetchUserApplications = createAsyncThunk(
     }
   }
 );
+
+
 
 const userSlice = createSlice({
   name: 'user',

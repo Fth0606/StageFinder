@@ -17,6 +17,8 @@ import EditProfile from './pages/Profile/EditProfile';
 import StagesList from './pages/StagesList/StagesList';
 import StageDetails from './pages/StageDetails/StageDetails';
 import StudentMessages from './pages/Student/StudentMessages';
+import CompleteProfileStudent from './pages/Student/CompleteProfileStudent';
+
 
 // Pages - Company
 import CompanyDashboard from './pages/company/CompanyDashboard';
@@ -24,6 +26,7 @@ import CompanyProfile from './pages/company/CompanyProfile'; // ✅ NOUVEAU
 import PostStage from './pages/company/PostStage';
 import CompanyApplications from './pages/company/CompanyApplications';
 import CompanyMessages from './pages/company/CompanyMessages';
+import CompleteProfileCompany from './pages/company/CompleteProfileCompany';
 
 // Pages - Admin
 import AdminDashboard from './pages/Admin/AdminDashboard';
@@ -69,6 +72,24 @@ function App() {
                 } 
               />
               <Route 
+                path="/complete-profile-student" 
+                element={
+                  <ProtectedRoute allowedRoles={['student']}>
+                    <CompleteProfileStudent />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/profile" 
+                element={
+                  <ProtectedRoute allowedRoles={['student']}>
+                    <Profile />
+                  </ProtectedRoute>
+                } 
+              />
+                <Route path="/complete-profile-company" element={<CompleteProfileCompany />} />
+
+              <Route 
                 path="/edit-profile" 
                 element={
                   <ProtectedRoute allowedRoles={['student']}>
@@ -99,6 +120,14 @@ function App() {
                 element={
                   <ProtectedRoute allowedRoles={['company']}>
                     <CompanyProfile />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/complete-profile-company" 
+                element={
+                  <ProtectedRoute allowedRoles={['company']}>
+                    <CompleteProfileCompany />
                   </ProtectedRoute>
                 } 
               />

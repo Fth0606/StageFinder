@@ -10,7 +10,6 @@ const Register = () => {
   const navigate = useNavigate();
   const { isLoading, error } = useSelector((state) => state.auth);
   
-  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,11 +42,17 @@ const Register = () => {
     }
 
     const result = await dispatch(register(formData));
+    
     if (result.type === 'auth/register/fulfilled') {
-      navigate('/');
+      // Rediriger vers la page appropriée selon le type d'utilisateur
+      if (formData.userType === 'student') {
+        navigate('/complete-profile-student');
+      } else if (formData.userType === 'company') {
+        navigate('/complete-profile-company');
+      } else {
+        navigate('/');
+      }
     }
-
-
   };
 
   return (
@@ -133,6 +138,9 @@ const Register = () => {
                     <option value="student">Étudiant</option>
                     <option value="company">Entreprise</option>
                   </Form.Select>
+                  <Form.Text className="text-muted">
+                    Vous pourrez compléter votre profil après l'inscription
+                  </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
